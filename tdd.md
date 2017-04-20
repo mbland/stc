@@ -2,12 +2,12 @@
 
 ## About
 This is an exercise in Test Driven Development. After the exercise there’s a walk-through of one
-possible solution paths.
+possible solution path.
 
 ## Exercise string calculator
-Requirements usually comes as increments. You start out with a set of features, then new features
+Requirements usually come as increments. You start out with a set of features, then new features
 get added. To understand how software evolves, it’s recommended that you follow the steps below one
-by one. There’s a walkthrough of the exercise you may skip to, if you’d rather take the back seat.
+by one. There’s a walk-through of the exercise you may skip to, if you’d rather take the back seat.
 
 ### Implement a string calculator using TDD
 
@@ -19,15 +19,15 @@ by one. There’s a walkthrough of the exercise you may skip to, if you’d rath
 1. Allow the add method to handle an unknown amount of numbers
 1. Allow the add method to handle new lines between numbers (instead of commas). The following input is ok: “1\n2,3” (will equal 6)
 1. Support different delimiters
-    1. To change a delimiter, the beginning of the string will contain a separate line that looks like this: “//[delimiter]\n[numbers…]”. For example “//;\n1;2” should return three where the default delimiter is “;”
+    1. To change a delimiter, the beginning of the string will contain a separate line that looks like this: `“//[delimiter]\n[numbers…]”`. For example `“//;\n1;2”` should return three where the default delimiter is “;”
     1. The first line is optional. All existing scenarios should still be supported
 1. Calling add with a negative number will throw an exception “negatives not allowed”
 
 ## Walk-through TDD string calculator
-This walkthrough follows the step above in the exercise, adding and changing code for each step.
+This walk-through follows the steps above in the exercise, adding and changing code for each step.
 Please note that this solution path may not be the best solution, and it’s definitely not the only
 solution. It’s just an example how code can evolve using the quick feedback loop of writing the
-test, implementing, refactoring and then start over.
+test, implementing and refactoring iteratively.
 
 ### 1: Create the class and method
 
@@ -171,7 +171,7 @@ public class StringCalculator {
 Looks like the latest implementation satisfies the corner case!
 
 ### 4: Add test for new requirement about specifying delimiter
-`
+
 ```
     @Test
     public void shouldReturnSumWithSpecifiedDelimiter() {
