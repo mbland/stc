@@ -46,7 +46,7 @@ client, so that it may be used in a unit test.
 ### Implement a trivial class using Test Driven Development (TDD)
 
 The purpose of this exercise is to practise TDD. You'll be tasked to write a simple class from
-requirements that keeps evolving. This allows you to use the quick feedback loop of writing tests
+requirements that keep evolving. This allows you to use the quick feedback loop of writing tests
 for the new feature, implement it, run tests and refactor iteratively.
 
 [Click here to go to the TDD exercise](tdd.md)
