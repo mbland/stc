@@ -1,0 +1,33 @@
+group 'com.schibsted.engprod'
+version '1.0-SNAPSHOT'
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'org.springframework.boot:spring-boot-gradle-plugin:1.4.4.RELEASE'
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'application'
+apply plugin: 'org.springframework.boot'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web") {
+        exclude module: "spring-boot-starter-tomcat"
+    }
+    compile 'org.springframework.boot:spring-boot-starter-actuator',
+            'org.springframework.boot:spring-boot-starter-jetty',
+            'com.fasterxml.jackson.core:jackson-databind:2.8.6'
+    testCompile 'junit:junit:4.11'
+}
+
+ext.mainClass = project.hasProperty('mainClass') ? project.getProperty('mainClass') :
+        'com.schibsted.engprod.stc.GreetingApplication'
+mainClassName = ext.mainClass
