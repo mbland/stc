@@ -27,6 +27,5 @@ public class BugCountTest {
     @Test
     public void shouldWork() {
         assertEquals(6, bugCount.getCount(app1));
-        assertTrue("Fix unclear test", false);
     }
 }
