@@ -17,8 +17,12 @@ The purpose of this exercise is to practise to design tests so that the intentio
 clear.
 
 1. Take a look at the test BugCountTest class
-1. Run the test. It should pass
+1. Run the test. It should pass:
+   ```
+   ./gradlew test --tests '*BugCountTest'
+   ```
 1. Refactor the test so that it's easy to understand what is tested in each interaction with the class
+   * HINT: How much work should `setUp` be doing? How many test cases should there be?
 1. Run the tests. They should pass
 
 ### Fix a flaky unit test
@@ -27,7 +31,11 @@ The purpose of this exercise is to practise to recognize and figure out the caus
 
 1. Take a look at the test DivisorTest class
 1. Run the test a few times. What happens?
+   ```
+   ./gradlew test --tests '*DivisorTest'
+   ```
 1. Change the test so that it's not flaky, without changing the Divisor class being tested
+   * HINT: How reliable are comparisons between floating-point numbers using normal comparison operators?
 1. Run the test as many times you like. It should now pass every time
 
 ### Create a fake to be used in a unit test
@@ -39,8 +47,13 @@ client class. Your job is to create a fake client (GreetingClientFake) that beha
 client, so that it may be used in a unit test.
 
 1. Take a look at the test GreetingClientFakeTest class
+1. Correct the assertions in the GreetingClientFakeTest class. Run the test with the new assertion and make sure it fails.
+   * HINT: You'll need to update an `import` statement to access the new assertion.
+   ```
+   ./gradlew test --tests '*GreetingClientFakeTest'
+   ```
 1. Implement the GreetingClientFake class
-1. Correct the assert in test in GreetingClientFakeTest class
+   * HINT: Do the absolute most straightforward thing that could possibly make the test pass.
 1. Run the test. It should pass
 
 ### Implement a trivial class using Test Driven Development (TDD)
