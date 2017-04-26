@@ -12,10 +12,10 @@ by one. There’s a walk-through of the exercise you may skip to, if you’d rat
 ### Implement a string calculator using TDD
 
 #### Create a simple string calculator with a method int add(String numbers)
-1. The method can take 0, 1 or 2 numbers, and will return their sum (for an empty string it will return 0) for example “” or “1” or “1,2”
+1. The method can take 0, 1 or 2 integer numbers, and will return their sum (for an empty string it will return 0) for example “” or “1” or “1,2”
     1. Start with the simplest test case of an empty string and move to 1 and two numbers
     1. Remember to solve things as simply as possible so that you force yourself to write tests you did not think about
-    1. Remember to refactor after each passing test
+    1. Remember to write a test for each case first, then refactor until it passes
 1. Allow the add method to handle an unknown amount of numbers
 1. Allow the add method to handle new lines between numbers (instead of commas). The following input is ok: “1\n2,3” (will equal 6)
 1. Support different delimiters
