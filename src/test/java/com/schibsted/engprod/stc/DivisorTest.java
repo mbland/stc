@@ -13,9 +13,10 @@ public class DivisorTest {
         for (int i = 0; i < 100; i++) {
             double x = Math.floor(Math.random() * 10);
             double y = Math.floor(Math.random() * 10);
+            Double expected = new Double(x / y);
 
-            if (x / y != divisor.div(x, y)) {
-                fail();
+            if (expected.compareTo(divisor.div(x, y)) != 0) {
+                fail("X: " + x + " Y: " + y);
             }
         }
     }

@@ -17,15 +17,40 @@ public class BugCountTest {
 
     @Before
     public void setUp() {
-        bugCount.add(app1, 1); // Basic add
-        bugCount.add(app2, 1); // Add app2 doesn't affect app1
-        bugCount.add(app1, 0); // Add 0 OK
-        bugCount.add(app1, 5); // Add to existing
     }
 
-    /* What are we testing here? What are the causes and effects? How can this be made clearer? */
     @Test
-    public void shouldWork() {
+    public void initializedToZero() {
+        assertEquals(0, bugCount.getCount(app1));
+    }
+
+    @Test
+    public void addZero() {
+        bugCount.add(app1, 0);
+        assertEquals(0, bugCount.getCount(app1));
+    }
+
+    @Test
+    public void addOneValue() {
+        bugCount.add(app1, 1);
+        assertEquals(1, bugCount.getCount(app1));
+    }
+
+    @Test
+    public void addMultipleValues() {
+        bugCount.add(app1, 1);
+        bugCount.add(app1, 0);
+        bugCount.add(app1, 5);
         assertEquals(6, bugCount.getCount(app1));
+    }
+
+    @Test
+    public void countsBetweenAppsAreIndependent() {
+        bugCount.add(app1, 1);
+        bugCount.add(app2, 1);
+        bugCount.add(app1, 0);
+        bugCount.add(app1, 5);
+        assertEquals(6, bugCount.getCount(app1));
+        assertEquals(1, bugCount.getCount(app2));
     }
 }
